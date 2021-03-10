@@ -83,10 +83,10 @@ e = grades[:, [0, 2]]
 
 # Consecutive uses colons; nonconsecutive uses commas
 
-
+"""
 # EXERCISE:
-random_grades = np.array(np.random.randint(60, 100, size=(3, 4)))
-# OR: grades = np.random.randint(60,100,12).reshape(3,4)
+random_grades = np.array(np.random.randint(60, 101, size=(3, 4)))
+# OR: grades = np.random.randint(60,101,12).reshape(3,4)
 print(random_grades)
 
 grades_means = random_grades.mean(axis=0)
@@ -95,3 +95,30 @@ grades_student_means = random_grades.mean(axis=1)
 
 print(grades_means)
 print(grades_student_means)
+"""
+
+# Shallow copies (view)
+##Whatever you do to original array affects the view and vice versa
+
+numbers = np.arange(1, 6)
+
+numbers2 = numbers.view()
+
+# Aray([1,2,3,4,5])
+
+numbers[1] *= 10
+print(numbers2)
+
+numbers2[1] /= 10
+print(numbers)
+
+# Slice views
+# slices also create views
+numbers2 = numbers[0:3]
+# First three elements of numbers
+
+# to verify it's a view, modify an elementin og and see what happens
+
+numbers[1] *= 20
+print(numbers2)
+# aray([1,40,3])
