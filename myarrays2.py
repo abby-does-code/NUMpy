@@ -122,3 +122,28 @@ numbers2 = numbers[0:3]
 numbers[1] *= 20
 print(numbers2)
 # aray([1,40,3])
+
+
+#############
+numbers = np.arange(1, 6)
+numbers2 = numbers.copy()
+
+numbers[1] *= 10
+
+print(numbers)
+print(numbers2)
+
+
+###########################
+"""
+Transposing an array of rows and columns flisp teh array, so the rows become columns and the columns become rows."""
+
+transposed = grades.T
+print(transposed)
+
+
+###########################
+
+# VSTACK
+v_grades = np.grades((grades, grades2))
+print(v_grades)
